@@ -29,9 +29,9 @@ export default class ShippingLabelMaker extends Component {
         })
     }
     calculateShipping = () => {
-        const shippingRate = .40;
-        const weight = this.state.wizardContext.weight
-        const shippingCost = weight * shippingRate * (this.state.wizardContext.shippingOption === 1 ? 1 : 1.5)
+        const {weight, shippingOption} = this.state.wizardContext || {};
+        const shippingRate = 0.40;
+        const shippingCost = weight * shippingRate * (shippingOption === 1 ? 1 : 1.5)
         return shippingCost.toFixed(2)
     }
 

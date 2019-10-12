@@ -8,7 +8,7 @@ export default function Navigator({totalSteps, onConfirm, currentStep, nextStep,
 
     return (
         <div className='navigator-buttons'>
-            {currentStep > 1 && !lastStep && <Button onClick={previousStep}>Back</Button>}
+            {currentStep > 1 && <Button onClick={previousStep}>Back</Button>}
             {!lastStep ? 
                 <Button disabled={nextButtonDisabled} onClick={nextStep}>Continue</Button> 
                 : <Button id='confirm-button' onClick={onConfirm}>Confirm</Button>}
