@@ -11,21 +11,22 @@ import {
     Weight,
     Confirm
 } from './steps';
+import _ from 'lodash';
 
 export default class ShippingLabelMaker extends Component {
     constructor(props) {
         super(props)
         this.state = {
             formComplete: false,
-            wizardContext: ShippingLabelWizardSchema,
+            wizardContext: _.cloneDeep(ShippingLabelWizardSchema),
             shippingTotal: ''
         }
     }
 
-    buildLabel = (data) => {
+    buildLabel = (completeWizardContext) => {
         this.setState({
             formComplete: true,
-            wizardContext: data
+            wizardContext: completeWizardContext
         })
     }
     calculateShipping = () => {
@@ -38,19 +39,12 @@ export default class ShippingLabelMaker extends Component {
     createNewLabel = () => {
         this.setState({
             formComplete: false,
-            wizardContext: ShippingLabelWizardSchema
+            wizardContext: _.cloneDeep(ShippingLabelWizardSchema)
         })
     }
 
     render() {
         const {from, to, weight, shippingOption} = this.state.wizardContext || {};
-        const Steps = [
-            <ReceiverAddress />,
-            <SenderAddress />,
-            <Weight />,
-            <ShippingOptions />,
-            <Confirm />
-        ]
 
         return (
             <div className='main-wrapper'>
@@ -100,8 +94,13 @@ export default class ShippingLabelMaker extends Component {
                     :
                     <Wizard
                         header={<Header title='Label Maker'/>}
-                        wizardContext={ShippingLabelWizardSchema}
-                        steps={Steps}
+                        wizardContext={this.state.wizardContext}
+                        steps={
+                            [<ReceiverAddress />,
+                            <SenderAddress />,
+                            <Weight />,
+                            <ShippingOptions />,
+                            <Confirm />]}
                         onComplete={this.buildLabel} />
                 }
             </div>

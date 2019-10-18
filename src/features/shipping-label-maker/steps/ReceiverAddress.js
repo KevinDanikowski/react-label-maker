@@ -45,57 +45,55 @@ export default class ReceiverAddress extends Component {
 
     render() {
         return (
-            <React.Fragment>
-                <Form>
-                    <h2>Sender's Address:</h2>
-                    <Form.Group inline>
-                        <label>Name</label>
-                        <Form.Input fluid
-                            error={this.state.nameError}
-                            onBlur={(e) => this.setData(e, 'name')}
-                            placeholder='Name'
-                            width={16}
-                            value={this.props.wizardContext.to.name}
-                            onChange={(e) => this.setData(e, 'name')} />
-                    </Form.Group>
-                    <Form.Group inline>
-                        <label>Street</label>
-                        <Form.Input fluid
-                            error={this.state.streetError}
-                            onBlur={(e) => this.setData(e, 'street')}
-                            placeholder='Street'
-                            width={16}
-                            value={this.props.wizardContext.to.street}
-                            onChange={(e) => this.setData(e, 'street')} />
-                    </Form.Group>
-                    <Form.Group inline>
-                        <label>City</label>
-                        <Form.Input fluid
-                            placeholder='City'
-                            error={this.state.cityError}
-                            onBlur={(e) => this.setData(e, 'city')}
-                            width={8}
-                            value={this.props.wizardContext.to.city}
-                            onChange={(e) => this.setData(e, 'city')} />
-                        <label>State</label>
-                        <Form.Input fluid
-                            error={this.state.stateError}
-                            onBlur={(e) => this.setData(e, 'state')}
-                            placeholder='State'
-                            width={6}
-                            value={this.props.wizardContext.to.state}
-                            onChange={(e) => this.setData(e, 'state')} />
-                        <label>Zip</label>
-                        <Form.Input fluid
-                            error={this.state.zipError}
-                            onBlur={(e) => this.setData(e, 'zip')}
-                            placeholder='Zip Code'
-                            width={8}
-                            value={this.props.wizardContext.to.zip}
-                            onChange={(e) => this.setData(e, 'zip')} />
-                    </Form.Group>
-                </Form>
-            </React.Fragment>
+            <Form>
+                <h2>Sender's Address:</h2>
+                <Form.Group inline>
+                    <label>Name</label>
+                    <Form.Input fluid
+                        error={this.state.nameError}
+                        onBlur={(e) => this.setData(e, 'name')}
+                        placeholder='Name'
+                        width={16}
+                        value={this.props.wizardContext.to.name}
+                        onChange={(e) => this.setData(e, 'name')} />
+                </Form.Group>
+                <Form.Group inline>
+                    <label>Street</label>
+                    <Form.Input fluid
+                        error={this.state.streetError}
+                        onBlur={(e) => this.setData(e, 'street')}
+                        placeholder='Street'
+                        width={16}
+                        value={this.props.wizardContext.to.street}
+                        onChange={(e) => this.setData(e, 'street')} />
+                </Form.Group>
+                <Form.Group inline>
+                    <label>City</label>
+                    <Form.Input fluid
+                        placeholder='City'
+                        error={this.state.cityError}
+                        onBlur={(e) => this.setData(e, 'city')}
+                        width={8}
+                        value={this.props.wizardContext.to.city}
+                        onChange={(e) => this.setData(e, 'city')} />
+                    <label>State</label>
+                    <Form.Input fluid
+                        error={this.state.stateError}
+                        onBlur={(e) => this.setData(e, 'state')}
+                        placeholder='State'
+                        width={6}
+                        value={this.props.wizardContext.to.state}
+                        onChange={(e) => this.setData(e, 'state')} />
+                    <label>Zip</label>
+                    <Form.Input fluid
+                        error={this.state.zipError}
+                        onBlur={(e) => this.setData(e, 'zip')}
+                        placeholder='Zip Code'
+                        width={8}
+                        value={this.props.wizardContext.to.zip}
+                        onChange={(e) => this.setData(e, 'zip')} />
+                </Form.Group>
+            </Form>
         )
     }
 }

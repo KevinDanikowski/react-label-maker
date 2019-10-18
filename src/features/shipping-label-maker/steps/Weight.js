@@ -30,21 +30,19 @@ export default class Weight extends Component {
 
     render() {
         return (
-            <React.Fragment>
-                <Form>
-                    <h2>Enter Weight:</h2>
-                    <Form.Group inline>
-                        <label>Weight (pounds)</label>
-                        <Form.Input fluid
-                            error={this.state.weightError}
-                            onBlur={(e) => this.setData(e, 'weight')}
-                            placeholder='Weight'
-                            width={16}
-                            value={this.props.wizardContext.weight}
-                            onChange={(e) => this.setData(e, 'weight')} />
-                    </Form.Group>
-                </Form>
-            </React.Fragment>
+            <Form>
+                <h2>Enter Weight:</h2>
+                <Form.Group inline>
+                    <label>Weight (pounds)</label>
+                    <Form.Input fluid
+                        error={this.state.weightError}
+                        onBlur={(e) => this.setData(e, 'weight')}
+                        placeholder='Weight'
+                        width={16}
+                        value={this.props.wizardContext.weight}
+                        onChange={(e) => this.setData(e, 'weight')} />
+                </Form.Group>
+            </Form>
         )
     }
 }
