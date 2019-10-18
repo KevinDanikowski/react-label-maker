@@ -6,7 +6,7 @@ import ShippingLabelWizardSchema from '../../features/shipping-label-maker/Shipp
 
 Enzyme.configure({ adapter: new Adapter() });
 
-describe.only('<ShippingLabelMaker />', () => {
+describe('<ShippingLabelMaker />', () => {
     let wrapper;
 
     beforeEach(() => {

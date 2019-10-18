@@ -13,6 +13,17 @@ body {
   margin-bottom: 20px;
   text-align: center;
 }
+.log-out-wrapper {
+  padding: 15px 30px;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+}
+.login-wrapper {
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+}
 .main-wrapper {
   display: flex;
   justify-content: center;
